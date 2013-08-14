@@ -159,7 +159,7 @@ class MysqliDb
      *
      * @return array Contains the returned rows from the select query.
      */
-    public function get($tableName, $columns = '*', $numRows = null)
+    public function get($tableName, $numRows = null, $columns = '*')
     {
         $column = is_array($columns) ? implode(', ', $columns) : $columns;
         $this->_query = "SELECT $column FROM $tableName";
